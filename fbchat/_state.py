@@ -46,6 +46,7 @@ def client_id_factory():
 def is_home(url):
     parts = _util.urlparse(url)
     # Check the urls `/home.php` and `/`
+    print(parts.path)
     return "home" in parts.path or "/" == parts.path
 
 
@@ -159,8 +160,8 @@ class State(object):
 
         # Sometimes Facebook tries to show the user a "Save Device" dialog
         if "save-device" in r.url:
-            r = session.get("https://m.facebook.com/login/save-device/cancel/")
-
+            #r = session.get("https://m.facebook.com/login/save-device/cancel/")
+            r = session.get("https://m.facebook.com")
         # Sometimes facebook redirects to facebook.com/cookie/consent-page/*[...more directories]. So, go to homepage 
         if "cookie" in r.url:
             r = session.get("https://m.facebook.com/", allow_redirects=False)
