@@ -186,7 +186,6 @@ def check_content(content, as_json=True):
 def to_json(content):
     content = strip_json_cruft(content)
     j = parse_json(content)
-    log.debug(j)
     return j
 
 

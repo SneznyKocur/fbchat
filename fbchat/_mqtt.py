@@ -79,7 +79,7 @@ class Mqtt(object):
             log.exception("Failed parsing MQTT data on %s as JSON", message.topic)
             return
 
-        log.debug("MQTT payload: %s, %s", message.topic, j)
+        
 
         if message.topic == "/t_ms":
             # Update sync_token when received
@@ -127,7 +127,6 @@ class Mqtt(object):
             "includeDeliveryReceipts": False,
             "includeSeqID": True,
         }
-        log.debug("Fetching MQTT sequence ID")
         # Same request as in `Client.fetchThreadList`
         (j,) = state._graphql_requests(_graphql.from_doc_id("1349387578499440", params))
         sequence_id = j["viewer"]["message_threads"]["sync_sequence_id"]
@@ -308,7 +307,7 @@ class Mqtt(object):
                 OSError,
                 paho.mqtt.client.WebsocketConnectionError,
             ) as e:
-                log.debug("MQTT reconnection failed: %s", e)
+                pass
 
         return True  # Keep listening
 

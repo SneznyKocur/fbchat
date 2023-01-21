@@ -57,7 +57,6 @@ def response_to_json(content):
         else:
             rtn[int(key[1:])] = value["data"]
 
-    _util.log.debug(rtn)
 
     return rtn
 
