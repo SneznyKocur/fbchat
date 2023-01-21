@@ -30,16 +30,9 @@ Go to `Read the Docs <https://fbchat.readthedocs.io>`__ to see the full document
 or jump right into the code by viewing the `examples <https://github.com/carpedm20/fbchat/tree/master/examples>`__
 
 Installation:
-
 .. code-block::
 
-    $ pip install fbchat
-
-You can also install from source if you have ``pip>=19.0``:
-
-.. code-block::
-
-    $ git clone https://github.com/carpedm20/fbchat.git
+    $ git clone https://github.com/SneznyKocur/fbchat.git
     $ pip install fbchat
 
 

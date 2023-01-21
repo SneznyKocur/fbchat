@@ -46,7 +46,6 @@ def client_id_factory():
 def is_home(url):
     parts = _util.urlparse(url)
     # Check the urls `/home.php` and `/`
-    print(parts.path)
     return "home" in parts.path or "/" == parts.path
 
 
@@ -211,8 +210,6 @@ class State(object):
 
         if fb_dtsg == None or fb_dtsg == "":
             fb_dtsg_element = soup.find("input", {"name": "fb_dtsg"})
-            print("\n\n[1]fb_dtsg_element:\n")
-            print(fb_dtsg_element)
             if fb_dtsg_element:
                 fb_dtsg = fb_dtsg_element["value"]
                 # print("\n\n[1.1]fb_dtsg_element:\n")
@@ -242,7 +239,6 @@ class State(object):
         logout_h_element = soup.find("input", {"name": "h"})
         logout_h = logout_h_element["value"] if logout_h_element else None
         
-        print(user_id, fb_dtsg, revision, logout_h)
 
         return cls(
             user_id=user_id,
