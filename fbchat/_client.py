@@ -602,6 +602,7 @@ class Client(object):
                     "{} had an unknown thread type: {}".format(_id, k)
                 )
 
+        log.debug(entries)
         return entries
 
     def fetchUserInfo(self, *user_ids):
@@ -3847,6 +3848,7 @@ class Client(object):
             buddylist: A list of dictionaries with friend id and last seen timestamp
             msg: A full set of the data received
         """
+        log.debug("Chat Timestamps received: {}".format(buddylist))
 
     def onBuddylistOverlay(self, statuses=None, msg=None):
         """Called when the client is listening and client receives information about friend active status.
@@ -3862,6 +3864,7 @@ class Client(object):
         Args:
             msg: A full set of the data received
         """
+        log.debug("Unknown message received: {}".format(msg))
 
     def onMessageError(self, exception=None, msg=None):
         """Called when an error was encountered while parsing received data.
