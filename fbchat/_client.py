@@ -2756,7 +2756,6 @@ class Client(object):
             self.onUnknownMesssageType(msg=delta)
 
     def _parse_payload(self, topic, m):
-        log.error(f"topic: {topic}, m: {m}")
         # Things that directly change chat
         if topic == "/t_ms":
             if "deltas" not in m:
